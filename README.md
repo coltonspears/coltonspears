@@ -25,3 +25,11 @@ measure how it behaves, and make it straightforward to run.
 - Training and evaluating small models for game agents and computer vision.
 - Connecting Python ML workflows with C# applications.
 - Building useful developer tools with clear examples and reproducible setup.
+
+## Contributions
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/coltonspears/coltonspears/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/coltonspears/coltonspears/output/github-snake.svg" />
+  <img alt="Snake animation of my GitHub contributions" src="https://raw.githubusercontent.com/coltonspears/coltonspears/output/github-snake.svg" />
+</picture>
