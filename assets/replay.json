@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "description": "A recorded generation-168 evaluation game against the one-ply greedy reference policy.",
+  "source": "ultimate-tic-tac-toe-ml/reports/greedy.json",
+  "source_sha256": "47f2abec26fab08048d976b919ff05002428c2d8b5bdde6e6539d32b07f797fa",
+  "game_index": 0,
+  "seed": 20260905,
+  "weights": "generation-168.pt",
+  "weights_sha256": "fb6c6502b94fb489db5522ffdfb40226dfb61816fb002898e03efa87189dde2c",
+  "simulations_per_move": 64,
+  "opponent": "greedy",
+  "candidate": "X",
+  "opening": [
+    75,
+    31,
+    37,
+    17
+  ],
+  "result": "X_WIN",
+  "action_encoding": "board*9+cell; both board and cell are row-major 0..8",
+  "moves": [
+    75,
+    31,
+    37,
+    17,
+    77,
+    49,
+    38,
+    22,
+    36,
+    4,
+    76,
+    13,
+    5,
+    45,
+    2,
+    18,
+    8
+  ]
+}

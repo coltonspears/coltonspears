@@ -1,0 +1,53 @@
+{
+  "generation": 168,
+  "step": 250,
+  "git_sha": "4e5aa82fc4a8a60f8291ad983c864aadf35073ea",
+  "engine_version": "standard-v1",
+  "config_hash": "5bd9bb666264d181874febd8958bf721784f557c0eba95c2b7332abe6b35716b",
+  "training_config": {
+    "base_seed": 20260810,
+    "device": "cuda",
+    "engine_version": "standard-v1",
+    "replay": {
+      "augmentation": true,
+      "max_positions": 200000,
+      "recency_decay": 0.9,
+      "recent_generations": 10,
+      "shard_positions": 25000
+    },
+    "self_play": {
+      "actor_slots": 64,
+      "games_per_generation": 256,
+      "late_temperature": 0.0,
+      "mcts": {
+        "batch_size": 64,
+        "c_puct": 1.5,
+        "dirichlet_alpha": 0.3,
+        "dirichlet_fraction": 0.25,
+        "seed": 0,
+        "simulations": 128,
+        "temperature": 1.0,
+        "time_headroom_seconds": 0.0
+      },
+      "temperature": 1.0,
+      "temperature_plies": 20
+    },
+    "tracking_enabled": true,
+    "training": {
+      "batch_size": 1024,
+      "checkpoint_interval_steps": 50,
+      "gradient_clip_norm": 5.0,
+      "learning_rate": 0.001,
+      "minimum_learning_rate_ratio": 0.1,
+      "num_workers": 0,
+      "policy_loss_weight": 1.0,
+      "scheduler": "cosine",
+      "steps_per_generation": 250,
+      "value_loss_weight": 1.0,
+      "weight_decay": 0.0001
+    }
+  },
+  "source_checkpoint_sha256": "1bb8cf196db6b9d2429c7ae51d52f6f4c6feef26e59ef3cf6af6b4553f8cb16a",
+  "published_weights_sha256": "fb6c6502b94fb489db5522ffdfb40226dfb61816fb002898e03efa87189dde2c",
+  "note": "Model tensors only. Optimizer, replay, tracking paths and RNG state omitted."
+}

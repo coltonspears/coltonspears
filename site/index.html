@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="description" content="Play Ultimate Tic-Tac-Toe against Colton's small, self-play-trained neural network. The model runs locally in your browser.">
+  <title>Play my AI · Colton Spears</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="arena.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#game">Skip to game</a>
+  <header class="site-header">
+    <a href="https://github.com/coltonspears" class="profile-link"><span aria-hidden="true">‹</span> Colton Spears</a>
+    <button type="button" class="theme-button" id="theme-toggle" aria-label="Switch to light theme">Light theme <span aria-hidden="true">◐</span></button>
+  </header>
+  <main>
+    <div class="intro">
+      <div><p class="game-name">Ultimate Tic-Tac-Toe</p><h1>Your next move.<br>My little neural net.</h1></div>
+      <p class="intro-copy">Nine boards. One game.<br>Take on a small model trained through self-play.</p>
+    </div>
+    <div class="arena-layout">
+      <section class="game" id="game" aria-label="Play Ultimate Tic-Tac-Toe" tabindex="-1">
+        <div class="players"><span><b class="x-color">×</b> You</span><span>Generation 168 <b class="o-color">○</b></span></div>
+        <div id="arena-status" class="game-status" role="status" aria-live="polite">Loading the trained model…</div>
+        <div id="arena-board" class="arena-board" aria-label="Ultimate Tic-Tac-Toe board" aria-busy="true"></div>
+        <div class="game-controls">
+          <button type="button" id="arena-reset" class="button">New game <span aria-hidden="true">↻</span></button>
+          <label class="hint-toggle"><input type="checkbox" id="arena-heat" disabled> Show model hints</label>
+        </div>
+        <div class="error-panel" id="error-panel" hidden>
+          <p id="error-message">The trained model could not load.</p>
+          <button type="button" class="button" id="model-retry">Retry model</button>
+        </div>
+        <p class="move-explanation" id="arena-explain">The highlighted boards show where you can play.</p>
+        <div class="hint-legend" id="hint-legend" hidden><span>Lower preference</span><i aria-hidden="true"></i><span>Higher preference</span></div>
+        <p id="hint-note" class="hint-note" hidden>These are the network’s preferences for your next move, before search. Brighter is stronger; the percentages are not win chances.</p>
+      </section>
+      <aside class="about-game" aria-label="Rules and model details">
+        <section class="rules" aria-labelledby="rules-heading">
+          <h2 id="rules-heading">A familiar game.<br>One little twist.</h2>
+          <p>You’re <strong class="x-color">X</strong>. The model plays <strong class="o-color">O</strong>. Win three small boards in a row to win the match.</p>
+          <div class="routing-diagram" aria-hidden="true"><div class="rule-nine"><i></i><i></i><i></i><i></i><i></i><i class="selected"></i><i></i><i></i><i></i></div><span>↗</span><div class="rule-nine destination"><i></i><i></i><i></i><i></i><i></i><i class="selected"></i><i></i><i></i><i></i></div></div>
+          <p class="routing-caption"><strong>Your square chooses their board.</strong> Play in the middle-right square, and your opponent must play in the middle-right board.</p>
+          <p class="rule-exception">If that board is already won or drawn, they can choose any open board. Boards are numbered left to right, top to bottom.</p>
+        </section>
+        <section class="model-details" aria-labelledby="model-heading">
+          <h2 id="model-heading">Small model. Real decisions.</h2>
+          <dl><div><dt>Checkpoint</dt><dd>Generation 168</dd></div><div><dt>Parameters</dt><dd>132,266</dd></div><div><dt>Search per move</dt><dd>64 simulations</dd></div><div><dt>Model download</dt><dd>About 530 KB</dd></div></dl>
+          <div class="model-state"><span id="model-dot" class="model-dot" aria-hidden="true"></span><span id="model-state">Loading model</span></div>
+          <p>The neural network evaluates positions and suggests moves. Tree search looks ahead before it picks a square.</p>
+          <p>The model runs locally in your browser. Your moves stay on your device; no inference server is involved.</p>
+          <a class="model-card-link" href="https://github.com/coltonspears/ultimate-tic-tac-toe-ml/blob/main/MODEL_CARD.md">Read the model card <span aria-hidden="true">↗</span></a>
+        </section>
+      </aside>
+    </div>
+    <footer><span>Built by <a href="https://github.com/coltonspears">Colton Spears</a></span><a href="https://github.com/coltonspears/ultimate-tic-tac-toe-ml">Training code &amp; experiments <span aria-hidden="true">↗</span></a></footer>
+  </main>
+  <noscript><div class="noscript">This game needs JavaScript to run the trained model. Enable JavaScript, then reload the page.</div></noscript>
+</body>
+</html>
